@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Player Dice Game</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./game.js" defer></script>
+</head>
+
+<body>
+    <div class="max-score" id="max-score">The max score is: </div>
+    <div class="players-container" id="players-container">
+        <div class="players-1-container" id="players-1-container">
+            <h3>PLAYER 1</h3>
+            <div class="total-score" id="total-score-1">0</div>
+            <div class="current-score-container">
+                <p>Current score</p>
+                <div class="current-score" id="current-score-1">0</div>
+            </div>
+        </div>
+        <div class="players-2-container" id="players-2-container">
+            <h3>PLAYER 2</h3>
+            <div class="total-score" id="total-score-2">0</div>
+            <div class="current-score-container">
+                <p>Current score</p>
+                <div class="current-score" id="current-score-2">0</div>
+            </div>
+        </div>
+    </div>
+    <div class="dices-container" id="dices-container">
+        <div class="dice" id="dice-1"></div>
+        <div class="dice" id="dice-2"></div>
+    </div>
+    <footer>
+        <button class="new-game-btn">NEW GAME</button>
+        <button class="roll-dice-btn" id="roll-dice-btn">ROLL DICE</button>
+        <button class="hold-btn" id="hold-btn">HOLD</button>
+    </footer>
+</body>
+
+</html>
