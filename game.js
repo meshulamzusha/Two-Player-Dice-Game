@@ -27,8 +27,10 @@ function rollTwoDices() {
     dice1.textContent = diceScore1
     dice2.textContent = diceScore2
 
-    dice1.classList.add(`dice-img${diceScore1}`)
-    dice2.classList.add(`dice-img${diceScore2}`)
+    const currentDice1 = [...dice1.classList].filter(c => c != 'dice')[0]
+    dice1.classList.replace(currentDice1, `dice-img${diceScore1}`)
+    const currentDice2 = [...dice2.classList].filter(c => c != 'dice')[0]
+    dice2.classList.replace(currentDice2, `dice-img${diceScore2}`)
 
     if (diceScore1 == diceScore2) {
         return 0
@@ -81,14 +83,18 @@ function onRollDice() {
         currentPlayer = currentPlayer == 1 ? 2 : 1
     }
 
-    if (totalScore1 >= maxScore) {
+    if (totalScore1 + currentScore1 >= maxScore) {
+        totalScoreElement1.innerText = totalScore1 + currentScore1
+        currentScoreElement1.innerText = 0
         const winMessage = document.createElement('p')
         winMessage.innerText = 'Player 1 is the winner'
         playerContainer1.insertBefore(winMessage, playerContainer1.childNodes[2]);
         rollDiceBtn.disabled = true;
     }
 
-    if (totalScore2 >= maxScore) {
+    if (totalScore2 + currentScore2 >= maxScore) {
+        totalScoreElement2.innerText = totalScore2 + currentScore2
+        currentScoreElement2.innerText = 0
         const winMessage = document.createElement('p')
         winMessage.innerText = 'Player 2 is the winner'
         playerContainer2.insertBefore(winMessage, playerContainer2.childNodes[2]);
